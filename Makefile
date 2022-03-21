@@ -28,7 +28,7 @@ DIRS := X32lib
 CFLAGS=-O0 -g3 -Wall $(addprefix -I,$(DIRS))
 LDFLAGS=$(addprefix -L,$(DIRS)) $(addprefix -l,$(LIBS))
 TARGETS=X32lib X32Reaper X32_Command X32Wav_Xlive X32Xlive_Wav X32
-AIR_TARGETS=X32 XAirGetScene XAirSetScene XAir_Command
+AIR_TARGETS=X32lib XAirGetScene XAirSetScene XAir_Command
 MORE_TARGETS=GetSceneName X32DeskRestore X32DeskSave X32GEQ2cpy X32GetScene \
 X32Replay X32SetScene X32Tap X32USB XAirGetScene XAirSetScene XAir_Command
 
@@ -61,10 +61,10 @@ X32SetScene: X32lib
 	$(CC) $(CFLAGS) -o $(BUILD)/$@ $@.c $(LDFLAGS) SetSceneParse.c fxparse1.c fxparse5.c fxparse.c
 
 XAir_Command: X32lib
-	$(CC) $(CFLAGS) -o $(BUILD)$@ $@.c $(LDFLAGS)
+	$(CC) $(CFLAGS) -o $(BUILD)/$@ $@.c $(LDFLAGS)
 
 XAirGetScene: X32lib
-	$(CC) $(CFLAGS) -o $(BUILD)$@ $@.c $(LDFLAGS)
+	$(CC) $(CFLAGS) -o $(BUILD)/$@ $@.c $(LDFLAGS)
 
 XAirSetScene: X32lib
 	$(CC) $(CFLAGS) -o $(BUILD)/$@ $@.c XAirSetSceneParse.c XAir_fxparse.c XAir_fxparse1.c $(LDFLAGS)
