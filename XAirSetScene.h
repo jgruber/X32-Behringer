@@ -1419,7 +1419,9 @@ char* Xsource[] = {"OFF", "LR", "LRPFL", "LRAFL", "AUX", "U1718",
         "Bus12", "Bus34", "Bus56"};
 #define Xsource_max	(sizeof (Xsource) / sizeof (char*))
 
-char* Xgatemode[] = {"GATE", "EXP2", "EXP3", "EXP4", "DUCK"};
+// Doc is wrong the order
+// not this: char* Xgatemode[] = {"GATE", "EXP2", "EXP3", "EXP4", "DUCK"};
+char* Xgatemode[] = {"EXP2", "EXP3", "EXP4", "GATE", "DUCK"};
 #define Xgatemode_max	(sizeof (Xgatemode) / sizeof (char*))
 
 char* Xfiltertype[] = {"LC6", "LC12", "HC6", "HC12", "1.0", "2.0", "3.0", "5.0", "10.0"};
@@ -1499,7 +1501,7 @@ char* Xfxtyp4[] = {"HALL", "AMBI", "RPLT", "ROOM", "CHAM", "PLAT", "VREV", "VRM"
 		"DRV", "PIT2", "PIT"};
 
 int Xfxtyp4_max = (sizeof (Xfxtyp4) / sizeof (char*));
-              
+
 char* l_factor[] = {"1/4", "3/8", "1/2", "2/3", "1", "4/3", "3/2", "2", "3"};
 int ll_factor = (sizeof(l_factor) / sizeof (char*));
 
